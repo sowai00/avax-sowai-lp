@@ -5,14 +5,22 @@ import MasterInfo from "contracts/MasterFUJI.json";
 import { useMoralis } from "react-moralis";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import config from "contracts/config"
+import Web3 from "web3";
 
-import BigNumber from "bignumber.js";
 const { Text } = Typography;
 
 export default function Approve() {
 
-  const { Moralis, web3 } = useMoralis();
-  const { chainId, walletAddress } = useMoralisDapp();
+  // const { Moralis, web3 } = useMoralis();
+
+    const web3 =new Web3(window.web3.currentProvider)
+
+    const { chainId, walletAddress } = useMoralisDapp();
+    // const  walletAddress= web3.eth.getAccounts()
+    // const Accounts = await web3.eth.getAccounts();
+    // const walletAddress=Accounts[0]
+    // console.log(walletAddress)
+
   // const approveValue = config.approve
   let approveValue =web3.utils.toWei('100000000000000000')
 //Pair
@@ -131,7 +139,7 @@ export default function Approve() {
           </Button>
           <Input type='type' id="mytext1" onChange={e => setDval(e.target.value)}  placeholder="0" allowClear value={dval} 
           suffix={
-            <Button type="type" onClick={() => setDval(balance)} align="center" size="small" >Deposit Max FYP-AVAX LP</Button>
+            <Button type="type" onClick={() => setDval(balance)} align="center" size="small" >Deposit Max LP</Button>
           } />
 
         </>

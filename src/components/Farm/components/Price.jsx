@@ -14,6 +14,7 @@ const { Text } = Typography;
 export default function Price() {
     const Web3 = require('web3');
     const web3 = new Web3("https://api.avax-test.network/ext/bc/C/rpc");
+    //pngRouter
     let Routerabi = routerabi;
     let RouterAddress = config.FUJI.Router.toLowerCase();
 
@@ -28,12 +29,11 @@ export default function Price() {
 
     let masteraddress = config.FUJI.MasterChef.toLowerCase();
     let masterabi = master;
-
-  
-
     let masterAddress= config.FUJI.MasterChef.toLowerCase();
+    
     const [prices, setPrice] = useState(0)
     const [Apy,setApy]= useState(0)
+
     const calcPrice= async function() {
         let fypprice; 
         let ToSell = web3.utils.toWei("1", "ether");
@@ -94,7 +94,7 @@ export default function Price() {
                 console.log(`CURRENT PRICE: ${Price}`);
                 setPrice(Price)
             }}>Check Current Price of FYP Token</Button> */}
-            <div>1 FYP = {prices} AVAX</div>
+            <div>1 SOWAI = {prices} AVAX</div>
             <div>The Pool Interest Rate (APR) : {Apy} %</div>
         </>
     )
