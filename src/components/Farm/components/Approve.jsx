@@ -115,9 +115,11 @@ export default function Approve() {
         console.log("An error occured", err)
         return
       }
-      console.log("The balances are: ", res);
+     
       // let key =BigNumber(res/config.decimals)
-      setBalance(res/config.decimals)
+
+      setBalance(web3.utils.fromWei(res))
+      console.log("The balances are: ", web3.utils.fromWei(res),typeof(web3.utils.fromWei(res)));
 
     })
       //
