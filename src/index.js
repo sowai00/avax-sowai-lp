@@ -7,14 +7,12 @@ import QuickStart from "components/QuickStart";
 import { MoralisDappProvider } from "./providers/MoralisDappProvider/MoralisDappProvider";
 import Moralis from "moralis";
 
-  const APP_ID = process.env.REACT_APP_MORALIS_APPLICATION_ID
-  const SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL
-  const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID
-  const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL
+const APP_ID = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+const SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
+const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
 
-
-
-  Moralis.start({serverUrl,appId});
+Moralis.start({ serverUrl, appId });
 const Application = () => {
   if (APP_ID && SERVER_URL)
     return (
